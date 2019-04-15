@@ -8,10 +8,18 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       components: {
         default: () => import('./views/Home'),
+        'toolbar': () => import('./components/Toolbar')
+      }
+    },
+    {
+      path: '/about',
+      name: 'about',
+      components: {
+        default: () => import('./views/About'),
         'toolbar': () => import('./components/Toolbar')
       }
     },
@@ -19,7 +27,7 @@ export default new Router({
       path: '*', 
       components: {
         default: () => import('./views/Home'),
-        'header': () => import('./components/Toolbar') 
+        'toolbar': () => import('./components/Toolbar') 
       }
     }
   ]
